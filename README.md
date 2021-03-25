@@ -9,15 +9,18 @@ Install Anaconda for Windows. Then implment Anaconda Prompt with **Administratio
 
 ## Collector
 Now follow the steps below within Anaconda Prompt.
+
 First, create virtual environment.
 ```shell
 > conda env create -f environment.yaml
 ```
 
-Now the virtual environment named **capstone** is created and you should use it.
+
+Now the virtual environment named **capstone** is created and you should activate it.
 ```shell
 > conda activate capstone
 ```
+
 
 Then, run the main.py.
 ```shell
