@@ -34,8 +34,10 @@ class indoor(QMainWindow,Ui_MainWindow):
     def new_rp(self):
         RP_newButton= pyautogui.prompt(title='Add new region',text='Input the name of region you want to add')
         #print(RP_newButton)
-        print(self.building_comboBox)
+        # print(self.building_comboBox)
         #open(self.building_comboBox, RP_newButton).close()
+        if RP_newButton == None:
+            return
         self.RP_comboBox.addItem(splitext(RP_newButton)[0])
         
 
