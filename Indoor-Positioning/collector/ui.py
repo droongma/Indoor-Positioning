@@ -69,6 +69,10 @@ class Ui_MainWindow(object):
         for building in listdir(self.data_path):
             if isdir(join(self.data_path, building)):
                 self.building_comboBox.addItem(building)
+
+        # load region information of building when started
+        for RP in listdir(join(self.data_path, self.building_comboBox.currentText()) ):
+            self.RP_comboBox.addItem(splitext(RP)[0])
         
         self.building_comboBox.currentTextChanged.connect(self.onBuildingChanged)
 
