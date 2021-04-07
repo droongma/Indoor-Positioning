@@ -1,4 +1,5 @@
 Indoor-Positioning/signal_data/
 Indoor-Positioning/collector/__pycache__/
-
+venv/
+backend/data/config/secret.key
 
