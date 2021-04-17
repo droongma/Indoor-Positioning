@@ -61,6 +61,11 @@ print(SECRET_KEY)
 ```
 - Using Python, create random string and store it into data/config/secret.key. (You should create secret.key file)
 
+Now setting for Django is done. Before you run the server, start mysql first.
+```shell
+service mysql start
+```
+
 Now you can run server with following command.
 ```shell
 python3 manage.py runserver
