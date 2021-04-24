@@ -2,4 +2,6 @@ Indoor-Positioning/signal_data/
 Indoor-Positioning/collector/__pycache__/
 venv/
 backend/data/config/secret.key
+ML(capstone)/raw_to_dataset/ap_mapping.csv
+ML(capstone)/raw_to_dataset/dataset.csv
 
