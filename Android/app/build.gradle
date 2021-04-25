@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "app.tutorialspoint.com.enabledisablewifi"
+        applicationId "app.capstone"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -29,6 +29,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation files('libs/poi-5.0.0.jar')
     implementation files('libs/commons-math3-3.6.1.jar')
+    implementation files('libs\\poi-5.0.0.jar')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

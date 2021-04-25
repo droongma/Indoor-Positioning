@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             case MY_PERMISSIONS_ACCESS_COARSE_LOCATION:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //Toast.makeText(MainActivity.this, "permission granted", Toast.LENGTH_SHORT).show();
-                    wifiManager.startScan();
+                    //wifiManager.startScan();
                 } else {
 
                     //Toast.makeText(MainActivity.this, "permission not granted", Toast.LENGTH_SHORT).show();
