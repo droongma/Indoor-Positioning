@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def merger(pathname):
+def merger(pathname, resultName):
     column_name = ['BSSID', 'DATANUM', 'RSSI', 'REGION']
     combinedData = pd.DataFrame(columns = column_name) # combined dataset 
     print(combinedData)
@@ -20,7 +20,7 @@ def merger(pathname):
                     # print(datafile.head())
                     combinedData = combinedData.append(datafile, ignore_index = True) # add dataframe to combinedData
             
-    combinedData.to_csv("science2_combined_dataset.csv", header=True, index=False)
+    combinedData.to_csv(resultName, header=True, index=False)
 
 if __name__ == '__main__':
     pass
