@@ -1,0 +1,20 @@
+* 모든 파이썬 파일은 '제1과학관 데이터' 혹은 '제2과학관 데이터' 폴더에서 돌린다 (1층, 2층, 3층 폴더를 하위 폴더로 가지는 곳을 의미)
+
+* 실행순서 : remove_ext_from_folder.py -> move_excel_file.py -> xls_to_csv.py -> column_changer.py -> merger.py
+
+remove_ext_from_folder.py : 처음 압축파일을 풀면 구역의 하위 폴더들 이름에 '.xls'가 포함되어 있다.(32116.xls 폴더 등)
+	이 프로그램을 실행하면 폴더 이름에서 '.xls'를 제거함
+
+move_excel_file.py : 각 구역 내의 하위폴더 안에는 데이터 파일(.xls 파일)이 포함되어 있다. 
+	이 파이썬 프로그램을 실행시킬 경우, 그 하위폴더 안의 엑셀 파일을 해당되는 구역 폴더로 옮긴다
+	결과적으로, 구역 1, 구역 2, ... 폴더 내에는 다른 파일이나 폴더 없이 오직 엑셀 파일만이 존재하게 된다.
+
+xls_to_csv.py : '제1과학관 데이터' 혹은 '제2과학관 데이터' 폴더의 모든 하위 xls 파일을 csv 파일로 변환한다.(원본 xls 파일은 유지)
+
+column_changer.py : csv 파일에서 필요없는 column인 SSID를 DATANUM(그 구역의 몇번째 데이터인지)으로 대체
+
+merger.py : 모든 csv 파일을 합쳐 하나의 파일(science1_combined_dataset.csv 또는 science2_combined_dataset.csv)로 만든다
+	이때 몇 번째 구역의 몇 번째 데이터인지 명시하여 추후에 머신러닝에 활용할 수 있게 만들었다.
+
+science2_combined_dataset.csv : 제2과학관의 모든 데이터를 하나의 파일로 만든 것.
+	DATANUM을 통해 이것이 어느 REGION의 몇 번째 데이터인지 파악 가능.
