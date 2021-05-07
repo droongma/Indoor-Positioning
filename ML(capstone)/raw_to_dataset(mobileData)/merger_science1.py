@@ -10,7 +10,7 @@ def merger(pathname, resultName):
         count = 1
         print(dirpath)
         current_dirname = dirpath.split('\\')[-1]
-        if "구역" in current_dirname: # if this directory contains csv file to be combined 
+        if "구역" in current_dirname and "사이" not in current_dirname: # if this directory contains csv file to be combined 
             for filename in filenames:
                 fname, ext = os.path.splitext(filename)
                 if ext == '.csv': # if it is csv file

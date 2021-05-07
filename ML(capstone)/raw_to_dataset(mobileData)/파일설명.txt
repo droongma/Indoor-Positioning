@@ -1,6 +1,8 @@
 * 모든 파이썬 파일은 '제1과학관 데이터' 혹은 '제2과학관 데이터' 폴더에서 돌린다 (1층, 2층, 3층 폴더를 하위 폴더로 가지는 곳을 의미)
 
-* 실행순서 : remove_ext_from_folder.py -> move_excel_file.py -> xls_to_csv.py -> column_changer.py -> merger_science1.py or merger_science2.py 
+* 실행순서 : remove_ext_from_folder.py -> move_excel_file.py -> xls_to_csv.py -> column_changer.py -> merger_science1.py or merger_science2.py  -> science1(2)_combined_dataset.csv 파일 생성
+
+* 압축을 풀고나서 1과학관 데이터면 doing_all_science1.py를, 2과학관 데이터면 doing_all_science1.py를 해당 폴더에서 실행하면 위의 과정을 한번에 실행하여 바로 science1(2)_combined_dataset.csv 파일을 생성할 수 있다.
 
 * 제1과학관에 원래 존재하던 구역1~구역9는 통합 파일에서 구역 10~18로 변형되었다.
 
@@ -16,14 +18,20 @@ xls_to_csv.py : '제1과학관 데이터' 혹은 '제2과학관 데이터' 폴�
 column_changer.py : csv 파일에서 필요없는 column인 SSID를 DATANUM(그 구역의 몇번째 데이터인지)으로 대체
 
 merger_science1(2).py : 모든 csv 파일을 합쳐 하나의 파일(science1_combined_dataset.csv 또는 science2_combined_dataset.csv)로 만든다
-	이때 몇 번째 구역의 몇 번째 데이터인지 명시하여 추후에 머신러닝에 활용할 수 있게 만들었다.
+	이때 몇 번째 구역(REGION 컬럼)의 몇 번째 데이터(DATANUM 컬럼)인지 명시하여 추후에 머신러닝에 활용할 수 있게 만들었다.
 
 doing_all_science1(2).py : 위의 실행순서를 파일 하나에 모아놓은 것. 즉 이것으로 한번에 combined dataset 생성 가능
 
 
-convert_to_dataset.py : combined_dataset.csv 파일을 머신러닝 training set에 쓸 수 있도록 변환함(training_dataset.csv으로 변환)
+
+
+---------- science1(2)_combined_dataset.csv 파일을 training set으로 바꾸기 -----
+
+convert_to_dataset.py : science1(2)_combined_dataset.csv 파일을 머신러닝 training set에 쓸 수 있도록 변환함(training_dataset.csv으로 변환)
 
 remove_duplicate_row.py : csv 파일의 중복 행을 제거해주는 프로그램
+
+------------------------------------------------------------------------------------------------
 
 
 * 아래는 csv 파일들에 대한 설명
@@ -37,7 +45,7 @@ ap_mapping.csv : 원래의 BSSID(AP 맥주소)를 어떻게 AP1, AP2, ...로 map
 
 training_dataset.csv : 트레이닝 데이터셋(중복 행 포함)
 
-training_dataset_remove_duplicates.csv : 트레이닝 데이터셋(remove_duplicate_row.py로 중복 행 제거)
+training_dataset_remove_duplicates.csv : 트레이닝 데이터셋(remove_duplicate_row.py로 중복 행 제거함, target column이 어느 구역의 데이터인지 명시한 것)
 
 
 

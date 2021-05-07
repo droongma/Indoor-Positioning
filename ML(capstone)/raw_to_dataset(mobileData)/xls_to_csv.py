@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-def xls_to_xlsx(pathname):
+def xls_to_csv(pathname):
     for (dirpath, dirnames, filenames) in os.walk(pathname):
         print(dirpath)
         current_dirname = dirpath.split('\\')[-1]
@@ -20,7 +20,7 @@ def xls_to_xlsx(pathname):
     
     
 
-# xls to xlsx
+# xls to csv
 
 if __name__ == "__main__":
     pass
