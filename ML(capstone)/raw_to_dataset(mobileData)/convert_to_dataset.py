@@ -35,7 +35,7 @@ df = pd.DataFrame(columns = Unique_AP_converted + ["target"]) # this is our resu
 
 for location in unique_location: # for each location, we make data whose target value is that location
     sub_rawdata = rawdata.loc[rawdata['REGION'] == location]
-    unique_datanum = set(sub_rawdata['DATANUM']) # one exection(which has same DATANUM) of collector corresponds to one data(row)
+    unique_datanum = set(sub_rawdata['DATANUM']) # one execution(which has same DATANUM) of collector corresponds to one data(row)
     for datanum in unique_datanum: 
         sub2_rawdata = sub_rawdata[sub_rawdata['DATANUM'] == datanum]
         df_row = {} # this is one row of our dataset
