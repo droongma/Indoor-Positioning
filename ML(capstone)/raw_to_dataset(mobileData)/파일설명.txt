@@ -18,13 +18,26 @@ column_changer.py : csv 파일에서 필요없는 column인 SSID를 DATANUM(그 
 merger_science1(2).py : 모든 csv 파일을 합쳐 하나의 파일(science1_combined_dataset.csv 또는 science2_combined_dataset.csv)로 만든다
 	이때 몇 번째 구역의 몇 번째 데이터인지 명시하여 추후에 머신러닝에 활용할 수 있게 만들었다.
 
-science1_combined_dataset.csv : 제1과학관의 모든 데이터를 하나의 파일로 만든 것.
-	DATANUM을 통해 이것이 어느 REGION의 몇 번째 데이터인지 파악 가능.
+doing_all_science1(2).py : 위의 실행순서를 파일 하나에 모아놓은 것. 즉 이것으로 한번에 combined dataset 생성 가능
 
-science2_combined_dataset.csv : 제2과학관의 모든 데이터를 하나의 파일로 만든 것.
+
+convert_to_dataset.py : combined_dataset.csv 파일을 머신러닝 training set에 쓸 수 있도록 변환함(training_dataset.csv으로 변환)
+
+remove_duplicate_row.py : csv 파일의 중복 행을 제거해주는 프로그램
+
+
+* 아래는 csv 파일들에 대한 설명
+
+science1(2)_combined_dataset.csv : 제1(2)과학관의 모든 데이터를 하나의 파일로 만든 것.
 	DATANUM을 통해 이것이 어느 REGION의 몇 번째 데이터인지 파악 가능.
 
 combined_dataset.csv : 제1과학관 데이터 + 제2과학관 데이터(이 dataset을 머신러닝 training set으로 변환할 예정)
 
-doing_all_science1(2).py : 위의 실행순서를 파일 하나에 모아놓은 것. 즉 이것으로 한번에 combined dataset 생성 가능
+ap_mapping.csv : 원래의 BSSID(AP 맥주소)를 어떻게 AP1, AP2, ...로 mapping 시켰는지 명시
+
+training_dataset.csv : 트레이닝 데이터셋(중복 행 포함)
+
+training_dataset_remove_duplicates.csv : 트레이닝 데이터셋(remove_duplicate_row.py로 중복 행 제거)
+
+
 
