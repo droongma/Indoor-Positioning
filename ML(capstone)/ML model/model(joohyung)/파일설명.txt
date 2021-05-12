@@ -1,0 +1,6 @@
+training_dataset_remove_duplicates.csv : 머신러닝 데이터셋
+make_model.ipynb : 모델을 만든 과정을 보여주는 코드
+loc_prediction_model.pkl : BSSID, RSSI 정보를 바탕으로 위치를 예측하는 PyCaret 모델
+
+test_dict.pickle : using_model_example.py에서 쓰인 예시(유저) wifi fingerprint 데이터. {BSSID1 : RSSI1, BSSID2 : RSSI2, ...}의 형식을 가진 딕셔너리다.
+using_model_example.py : 유저로부터 받은 wifi fingerprint 데이터를 어떻게 모델에 넣어서 output을 얻는지 보여주는 코드. 여기서 using_model() 함수가 예측된 위치를 리턴함.
