@@ -15,6 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -81,6 +85,16 @@ class WifiReceiver extends BroadcastReceiver {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            if(!Python.isStarted()){
+                Python.start(new AndroidPlatform(context));
+                Log.d("python","pythonstart success");
+            }
+            Python py = Python.getInstance();
+            PyObject python=py.getModule("pythontest");
+            // here we add arguments for func backwards
+            PyObject obj=python.callAttr("main");
+            Log.d("pythonresult",obj.toString());
 
 
             ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, deviceList.toArray());

@@ -1,14 +1,28 @@
 apply plugin: 'com.android.application'
+apply plugin : 'com.chaquo.python'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "app.capstone"
+        sourceSets{
+            main{
+                python{
+                    srcDirs=["src/main/python"]
+                }
+            }
+        }
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        python{
+            buildPython "C:/Users/sung9/AppData/Local/Programs/Python/Python37/python.exe"
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
