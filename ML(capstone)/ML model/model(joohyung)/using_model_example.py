@@ -1,31 +1,37 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 # This file explains how to predict location using our model from BSSID and RSSI data of user
 
-# We assume user's wifi fingerprint data(BSSID and RSSI data) is python dictionary type:
+# We assume user's wifi fingerprint data(BSSID and RSSI data) is JSON data:
 # For example, we assume data is like {BSSID1 : RSSI1, BSSID2 : RSSI2, ...}
-
-
 
 from pycaret.classification import *
 import pandas as pd
-import csv, pickle
-import numpy as np
+import pickle, json
 
-def using_model():
+def using_model(test_dict = None): # If this function gets argument, then we assume it is JSON
 
-    loc_prediction_model = load_model('loc_prediction_model')
+    loc_prediction_model = load_model('loc_prediction_model') # load our model
 
-    # load dataset
-    dataset = pd.read_csv("training_dataset_remove_duplicates.csv")
-    with open('ap_mapping.csv', mode='r') as inp:
-        reader = csv.reader(inp)
-        ap_mapping = {rows[0]:rows[1] for rows in reader}
+    # dataset = pd.read_csv("training_dataset_remove_duplicates.csv")
+    # with open('ap_mapping.csv', mode='r') as inp:
+    #     reader = csv.reader(inp)
+    #     ap_mapping = {rows[0]:rows[1] for rows in reader}
 
-    ff = open('test_dict.pickle', 'rb')
-    test_dict = pickle.load(ff)  # This is our example user data! 
+    # mapf = open('ap_mapping.pickle', 'wb')
+    # pickle.dump(ap_mapping, mapf)
+
+    with open('ap_mapping.pickle', "rb") as ttt: # Instead of using ap_mapping.csv, we use pickle data
+        ap_mapping = pickle.load(ttt)
+
+    # This if statement is for running on mobile
+    if test_dict != None:
+        test_dict = json.loads(test_dict) # If you get json data in test_dict, then use this code:
+
+    else: # This is just an example(running on PC)
+        ff = open('test_dict.pickle', 'rb')
+        test_dict = pickle.load(ff)  
 
     # test_dict = {'f4:d9:fb:d0:0c:a4': -110,
     #  'f4:d9:fb:d6:31:4a': -110,
@@ -34,11 +40,7 @@ def using_model():
     #  'f4:d9:fb:d2:7e:0e': -97,
     #  '00:26:66:c5:e0:c8': -110,
     #  'f4:d9:fb:d6:09:4b': -110,
-    #  'f4:d9:fb:d3:eb:0c': -74,
-    #  '20:db:ab:92:a7:2e': -110,
-    #  'c6:a5:11:98:c6:00': -110,
-    #  '20:db:ab:92:9a:64': -77,
-    #  'f4:d9:fb:d0:0f:29': -110,}
+    #  'f4:d9:fb:d3:eb:0c': -74,}
 
     unique_ap_converted = list(ap_mapping.values())
     df = pd.DataFrame(columns = list(unique_ap_converted)) # This will be the input of our model
