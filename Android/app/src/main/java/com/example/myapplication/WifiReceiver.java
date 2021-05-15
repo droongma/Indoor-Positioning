@@ -86,14 +86,18 @@ class WifiReceiver extends BroadcastReceiver {
                 e.printStackTrace();
             }
 
+            Log.d("python","pythonstarting");
             if(!Python.isStarted()){
                 Python.start(new AndroidPlatform(context));
                 Log.d("python","pythonstart success");
             }
             Python py = Python.getInstance();
-            PyObject python=py.getModule("pythontest");
+            //PyObject python=py.getModule("pythontest");
             // here we add arguments for func backwards
+            //PyObject obj=python.callAttr("main");
+            PyObject python=py.getModule("using_model_example");
             PyObject obj=python.callAttr("main");
+
             Log.d("pythonresult",obj.toString());
 
 
