@@ -4,4 +4,8 @@ venv/
 backend/data/config/secret.key
 ML(capstone)/raw_to_dataset/ap_mapping.csv
 ML(capstone)/raw_to_dataset/dataset.csv
-
+ML(capstone)/ML model/model(joohyung)/.ipynb_checkpoints
+ML(capstone)/ML model/model(joohyung)/mlruns
+ML(capstone)/ML model/model(joohyung)/catboost_info
+ML(capstone)/ML model/model(joohyung)/logs.log
+ML(capstone)/ML model/model(joohyung)/.vscode
