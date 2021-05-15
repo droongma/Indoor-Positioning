@@ -3,8 +3,8 @@
 
 # This file explains how to predict location using our model from BSSID and RSSI data of user
 
-# We assume user's wifi fingerprint data(BSSID and RSSI data) is JSON data:
-# For example, we assume data is like {BSSID1 : RSSI1, BSSID2 : RSSI2, ...}
+# We assume user's wifi fingerprint data(BSSID and RSSI data) is JSON data(parameter test_dict):
+# For example, we assume data is like {BSSID1 : RSSI1, BSSID2 : RSSI2, ...} of JSON form
 
 from pycaret.classification import *
 import pandas as pd
@@ -40,16 +40,18 @@ def using_model(test_dict = None): # If this function gets argument, then we ass
     #  'f4:d9:fb:d2:7e:0e': -97,
     #  '00:26:66:c5:e0:c8': -110,
     #  'f4:d9:fb:d6:09:4b': -110,
-    #  'f4:d9:fb:d3:eb:0c': -74,}
+    #  'f4:d9:fb:d3:eb:ww': -74}
 
     unique_ap_converted = list(ap_mapping.values())
+    original_BSSIDs = tuple(ap_mapping.keys())
     df = pd.DataFrame(columns = list(unique_ap_converted)) # This will be the input of our model
     converted_row = {} # convert result of user data
 
     for k in unique_ap_converted:
-        converted_row.setdefault(k, -110)
+        converted_row[k] = -110 # default RSSI value
     for k, v in test_dict.items():
-        converted_row[ap_mapping[k]] = v
+        if k in original_BSSIDs: # If this BSSID is in our AP mapping result
+            converted_row[ap_mapping[k]] = v
 
     df = df.append(converted_row, ignore_index = True)
     predictions = predict_model(loc_prediction_model, data = df)
