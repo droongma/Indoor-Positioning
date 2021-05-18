@@ -9,3 +9,8 @@ ML(capstone)/ML model/model(joohyung)/mlruns
 ML(capstone)/ML model/model(joohyung)/catboost_info
 ML(capstone)/ML model/model(joohyung)/logs.log
 ML(capstone)/ML model/model(joohyung)/.vscode
+ML(capstone)/ML model/model(joohyung)/TF_model/.ipynb_checkpoints
+ML(capstone)/ML model/model(joohyung)/TF_model/.vscode
+ML(capstone)/ML model/model(joohyung)/TF_model/keras_model1
+ML(capstone)/ML model/model(joohyung)/Pycaret_model/.vscode
+ML(capstone)/ML model/model(joohyung)/Pycaret_model/logs.log
