@@ -1,0 +1,14 @@
+ap_mapping.csv : 원래의 BSSID(AP 맥주소)를 어떻게 AP1, AP2, ...로 mapping 시켰는지 명시
+label_mapping.csv : location(target value) 값에 대하여 LabelEncoder를 사용했을 때 mapping된 결과를 나타낸 것
+feature_scale_list.csv : 모델을 만들 때 feature scaling을 사용했는데(각 feature의 값을 0(min)~1(max) 사이로 매핑시켰다), 이게 모델에 내장이 안되는 것 같다. 그래서 이 파일을 만들었다.
+이 파일에서 각 값은 n번째 feature의 (1 - 0) / (max(feature) - min(feature)) = scale 값을 계산한 것이다.
+
+training_dataset_remove_duplicates.csv : 머신러닝 데이터셋
+
+make_model1.ipynb : 모델을 어떻게 만들었는지 보여주는 코드
+model_tflite_version.tflite : tensorflow lite 형식의 모델, 우리가 사용할 모델이다
+
+model_use_example.py(중요파일) : 만든 모델(model_tflite_version.tflite)을 이용해 어떻게 output을 만드는지 보여주는 코드. 이 코드의 동작을 안드로이드에서 똑같이 구현할 수 있는지가 문제.
+
+cv_result.png : 모델(model_tflite_version.tflite)의 cross-validation 결과
+model_used.png : 모델의 구조를 보여줌
