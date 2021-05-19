@@ -7,10 +7,8 @@ import android.content.DialogInterface;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,8 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION
                     );
                 } else {
-                    final EditText et=new EditText(getApplicationContext());
+                    /*final EditText et=new EditText(getApplicationContext());
                     builder.setTitle("AP번호 입력").setCancelable(false).setView(et).setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -72,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     AlertDialog alertDialog=builder.create();
-                    alertDialog.show();
+                    alertDialog.show();*/
+                    wifiManager.startScan();
+                    Toast.makeText(getApplicationContext(),"scanning",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -98,17 +96,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case MY_PERMISSIONS_ACCESS_COARSE_LOCATION:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //Toast.makeText(MainActivity.this, "permission granted", Toast.LENGTH_SHORT).show();
-                    //wifiManager.startScan();
-                } else {
-
-                    //Toast.makeText(MainActivity.this, "permission not granted", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                break;
-        }
+        //Toast.makeText(MainActivity.this, "permission granted", Toast.LENGTH_SHORT).show();
+        //wifiManager.startScan();
+        //Toast.makeText(MainActivity.this, "permission not granted", Toast.LENGTH_SHORT).show();
     }
 }
