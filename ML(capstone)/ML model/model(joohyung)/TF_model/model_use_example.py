@@ -29,6 +29,11 @@ test_data = {'f4:d9:fb:d0:0c:a4': -110,
      'ww:ww:ww:ww:ww:dsd': -550,
      'aa:ww:ww:ww:ww:dsd' : -85}
 
+# --test--
+# df = pd.read_csv('training_dataset_remove_duplicates.csv').drop('target', axis=1)
+# temp = df.values[235]
+# print(temp)
+
 unique_ap_converted = list(ap_mapping.values())
 original_BSSIDs = tuple(ap_mapping.keys())
 converted_row = {} # convert result of user data
@@ -42,10 +47,8 @@ for k, v in test_data.items():
 test_data = np.array(tuple(converted_row.values())) # now it is an array of 1598(total number of APs) elements, where each element is RSSI value of corresponding AP
 # print(test_data.shape)
 
-# df = pd.read_csv('training_dataset_remove_duplicates.csv')
-# num_row, num_col = df.shape
-# X = df.iloc[:,0:num_col-1]
-# Y = df.iloc[:, num_col-1]
+# --test--
+# test_data = temp
 
 # feature scaling of input data using feature_scale_list.csv(because model does not have scaling information)
 scale_list = pd.read_csv("feature_scale_list.csv", header=None).values.squeeze()
@@ -80,6 +83,7 @@ print('-------------- output part ---------------')
 # The function `get_tensor()` returns a copy of the tensor data.
 # Use `tensor()` in order to get a pointer to the tensor.
 output_data = interpreter.get_tensor(output_details[0]['index'])
+print("model output :", output_data)
 
 # -------------------------------- part 3 : postprocess output ------------------------------------
 
@@ -89,9 +93,7 @@ output_data = np.argmax(output_data.squeeze())
 # This is our final output, i.e. predicted location using our model
 predicted_location = label_mapping[label_mapping['mapped_result'] == output_data]['original'].iloc[0] 
 
-
-
-print(output_data)
+print("argmax output : ", output_data)
 print("predicted location : ", predicted_location)
 
 
