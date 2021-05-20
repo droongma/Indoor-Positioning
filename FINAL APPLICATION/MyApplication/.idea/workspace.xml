@@ -21,9 +21,6 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
   <component name="ProjectId" id="1skd2lg3kuxrnJPnNmYcasPWFUJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -56,8 +53,8 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="MyApplication.app" />
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Android.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -132,28 +129,32 @@
       <screen x="0" y="25" width="1440" height="820" />
     </state>
     <state x="268" y="144" key="#com.intellij.ide.util.MemberChooser/0.25.1440.820@0.25.1440.820" timestamp="1621427006771" />
-    <state width="728" height="245" key="GridCell.Tab.0.bottom" timestamp="1621429147668">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state width="728" height="243" key="GridCell.Tab.0.bottom" timestamp="1621492732259">
+      <screen x="0" y="25" width="1440" height="814" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1621425567029" />
+    <state width="728" height="243" key="GridCell.Tab.0.bottom/0.25.1440.814@0.25.1440.814" timestamp="1621492732259" />
     <state width="1396" height="245" key="GridCell.Tab.0.bottom/0.25.1440.818@0.25.1440.818" timestamp="1621426168551" />
     <state width="728" height="245" key="GridCell.Tab.0.bottom/0.25.1440.821@0.25.1440.821" timestamp="1621429147668" />
-    <state width="728" height="245" key="GridCell.Tab.0.center" timestamp="1621429147668">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state width="728" height="243" key="GridCell.Tab.0.center" timestamp="1621492732259">
+      <screen x="0" y="25" width="1440" height="814" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1621425567028" />
+    <state width="728" height="243" key="GridCell.Tab.0.center/0.25.1440.814@0.25.1440.814" timestamp="1621492732259" />
     <state width="1396" height="245" key="GridCell.Tab.0.center/0.25.1440.818@0.25.1440.818" timestamp="1621426168551" />
     <state width="728" height="245" key="GridCell.Tab.0.center/0.25.1440.821@0.25.1440.821" timestamp="1621429147668" />
-    <state width="728" height="245" key="GridCell.Tab.0.left" timestamp="1621429147668">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state width="728" height="243" key="GridCell.Tab.0.left" timestamp="1621492732259">
+      <screen x="0" y="25" width="1440" height="814" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1621425567026" />
+    <state width="728" height="243" key="GridCell.Tab.0.left/0.25.1440.814@0.25.1440.814" timestamp="1621492732259" />
     <state width="1396" height="245" key="GridCell.Tab.0.left/0.25.1440.818@0.25.1440.818" timestamp="1621426168550" />
     <state width="728" height="245" key="GridCell.Tab.0.left/0.25.1440.821@0.25.1440.821" timestamp="1621429147668" />
-    <state width="728" height="245" key="GridCell.Tab.0.right" timestamp="1621429147668">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state width="728" height="243" key="GridCell.Tab.0.right" timestamp="1621492732259">
+      <screen x="0" y="25" width="1440" height="814" />
     </state>
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1621425567028" />
+    <state width="728" height="243" key="GridCell.Tab.0.right/0.25.1440.814@0.25.1440.814" timestamp="1621492732259" />
     <state width="1396" height="245" key="GridCell.Tab.0.right/0.25.1440.818@0.25.1440.818" timestamp="1621426168551" />
     <state width="728" height="245" key="GridCell.Tab.0.right/0.25.1440.821@0.25.1440.821" timestamp="1621429147668" />
     <state x="362" y="67" key="SettingsEditor" timestamp="1621424544434">
@@ -164,10 +165,10 @@
       <screen x="0" y="25" width="1440" height="820" />
     </state>
     <state x="494" y="25" width="951" height="819" key="dock-window-1/0.25.1440.820@0.25.1440.820" timestamp="1621427383037" />
-    <state x="773" y="25" width="667" height="820" key="dock-window-2" timestamp="1621429334715">
-      <screen x="0" y="25" width="1440" height="820" />
+    <state x="220" y="103" width="667" height="815" key="dock-window-2" timestamp="1621492732784">
+      <screen x="0" y="25" width="1440" height="814" />
     </state>
-    <state x="773" y="25" width="667" height="820" key="dock-window-2/0.25.1440.820@0.25.1440.820" timestamp="1621429334715" />
+    <state x="220" y="103" width="667" height="815" key="dock-window-2/0.25.1440.814@0.25.1440.814" timestamp="1621492732784" />
     <state x="773" y="25" width="667" height="820" key="dock-window-2/0.25.1440.821@0.25.1440.821" timestamp="1621429147899" />
   </component>
   <component name="XDebuggerManager">
