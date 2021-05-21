@@ -70,7 +70,7 @@ class WifiReceiver implements Runnable {
             BufferedReader br = new BufferedReader(is);
             String line = "";
             while ((line = br.readLine()) != null) {
-                String[] token = line.split(","); // token에 들어가있는 값은 ap_mappint.csv 에 들어가있는 값들 !!!!!
+                String[] token = line.split(","); // token에 들어가는 값은 ap_mappint.csv 에 들어가있는 값들 !!!!!
                 from_ap_mapping.put(token[0], -110); // from_ap_mapping에 들어가는 값이 뭐지???
                 //Log.d("fromcsv",token[0] + ", "+token[1]);
             }
@@ -97,6 +97,11 @@ class WifiReceiver implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        float [][] scale_arr_final = new float[1][1598];
+
+        for (int i=0;i<scale_arr_final.length;i++){
+            scale_arr_final[0][i] = scale_arr[i];
+        }
 
         // tflite model creation : tflite 모델 읽어와서 interpreter로 만들기
 
@@ -112,7 +117,7 @@ class WifiReceiver implements Runnable {
             e.printStackTrace();
         }
         float[][] output = new float[1][18];
-        tflite.run(scale_arr, output);
+        tflite.run(scale_arr_final, output);
 
         // post processing tflite : tflite 결과 후처리
         float max = -1;
