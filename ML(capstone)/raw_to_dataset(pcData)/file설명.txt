@@ -1,0 +1,5 @@
+ap_mapping.csv : 원래의 AP 맥주소를 AP_1, AP_2, ... 등으로 어떻게 mapping시켰는지 나와있음. convert_to_dataset.py의 결과물
+combined_signal_all.csv : 1과학관 데이터 + 2과학관 데이터를 합친 것. convert_to_dataset.py의 input file임.
+dataset.csv : 머신러닝의 training set으로 쓸 데이터셋으로, convert_to_dataset.py의 결과물
+convert_to_dataset.py : raw data인 combined_signal_all.csv을 머신러닝의 training set으로 바꿔줌
+
