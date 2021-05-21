@@ -99,7 +99,7 @@ class WifiReceiver implements Runnable {
         }
         float [][] scale_arr_final = new float[1][1598];
 
-        for (int i=0;i<scale_arr_final.length;i++){
+        for (int i=0;i<1598;i++){
             scale_arr_final[0][i] = scale_arr[i];
         }
 
