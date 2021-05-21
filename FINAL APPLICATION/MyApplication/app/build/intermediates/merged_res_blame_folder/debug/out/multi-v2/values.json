@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/chungserin/.gradle/caches/transforms-2/files-2.1/2dda0425242f1a4704e29fb985a458b2/design-28.0.0/res/values/values.xml",
@@ -23,39 +23,20 @@
                     }
                 },
                 {
-                    "source": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/src/main/res/values/colors.xml",
+                    "source": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/src/main/res/values/strings.xml",
                     "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "153,55,102",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "194,97,148"
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "51",
+                        "endOffsets": "63"
                     },
                     "to": {
-                        "startLines": "349,350,351",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "16463,16509,16556",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "16504,16551,16602"
-                    }
-                },
-                {
-                    "source": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
+                        "startLines": "723",
                         "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "8",
-                        "endColumns": "12",
-                        "endOffsets": "368"
-                    },
-                    "to": {
-                        "startLines": "748",
-                        "startColumns": "4",
-                        "startOffsets": "43128",
-                        "endLines": "753",
-                        "endColumns": "12",
-                        "endOffsets": "43442"
+                        "startOffsets": "40441",
+                        "endColumns": "51",
+                        "endOffsets": "40488"
                     }
                 },
                 {
@@ -116,6 +97,23 @@
                     }
                 },
                 {
+                    "source": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "153,55,102",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "194,97,148"
+                    },
+                    "to": {
+                        "startLines": "349,350,351",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "16463,16509,16556",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "16504,16551,16602"
+                    }
+                },
+                {
                     "source": "/Users/chungserin/.gradle/caches/transforms-2/files-2.1/f88a7ef34ba2830589c01a6612467832/transition-28.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -130,23 +128,6 @@
                         "startOffsets": "35196,35567,35706,35753,35808,36402,36456,36508,36557,36618",
                         "endColumns": "39,42,46,54,44,53,51,48,60,49",
                         "endOffsets": "35231,35605,35748,35803,35848,36451,36503,36552,36613,36663"
-                    }
-                },
-                {
-                    "source": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "51",
-                        "endOffsets": "63"
-                    },
-                    "to": {
-                        "startLines": "723",
-                        "startColumns": "4",
-                        "startOffsets": "40441",
-                        "endColumns": "51",
-                        "endOffsets": "40488"
                     }
                 },
                 {
@@ -166,6 +147,25 @@
                         "endLines": "393,394,493,494,495,496,497,498,499,607,608,609,610,611,612,613,614,615,616,617,618,619,620,621,630,631,639,640,653,654,655,656,657,661,683,738,2430,2434,2435,2439,2440,2802,2803,3870,4072,4104,4142,4149",
                         "endColumns": "68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "19339,19402,26165,26233,26305,26375,26436,26510,26583,33468,33529,33591,33655,33717,33778,33846,33946,34006,34072,34145,34214,34271,34323,34385,34910,34986,35366,35401,36032,36093,36150,36184,36219,36397,37678,42404,155418,155619,155729,155930,156059,180337,180404,241612,266788,268853,270815,271192"
+                    }
+                },
+                {
+                    "source": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "368"
+                    },
+                    "to": {
+                        "startLines": "748",
+                        "startColumns": "4",
+                        "startOffsets": "43128",
+                        "endLines": "753",
+                        "endColumns": "12",
+                        "endOffsets": "43442"
                     }
                 },
                 {

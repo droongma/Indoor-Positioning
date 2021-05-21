@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml",
+            "outputFile": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-as/values-as.xml",
             "map": [
                 {
                     "source": "/Users/chungserin/.gradle/caches/transforms-2/files-2.1/06f6df44c76c4a181cad1895980d5a87/support-compat-28.0.0/res/values-as/values-as.xml",

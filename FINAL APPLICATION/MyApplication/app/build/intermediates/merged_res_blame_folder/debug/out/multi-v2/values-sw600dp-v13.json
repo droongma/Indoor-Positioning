@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chungserin/Downloads/Indoor-Positioning-update_excel/Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/Users/chungserin/Documents/GitHub/Indoor-Positioning/FINAL APPLICATION/MyApplication/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/chungserin/.gradle/caches/transforms-2/files-2.1/2dda0425242f1a4704e29fb985a458b2/design-28.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",

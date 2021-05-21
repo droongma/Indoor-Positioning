@@ -70,8 +70,8 @@ class WifiReceiver implements Runnable {
             BufferedReader br = new BufferedReader(is);
             String line = "";
             while ((line = br.readLine()) != null) {
-                String[] token = line.split(",");
-                from_ap_mapping.put(token[0], -110);
+                String[] token = line.split(","); // token에 들어가있는 값은 ap_mappint.csv 에 들어가있는 값들 !!!!!
+                from_ap_mapping.put(token[0], -110); // from_ap_mapping에 들어가는 값이 뭐지???
                 //Log.d("fromcsv",token[0] + ", "+token[1]);
             }
             for (ScanResult scanResult : wifiList) {
@@ -90,7 +90,7 @@ class WifiReceiver implements Runnable {
             int i = 0;
             while ((line = br.readLine()) != null) {
                 String[] token = line.split(",");
-                scale_arr[i] = (int) arr[i] * Float.parseFloat(token[0]);
+                scale_arr[i] =( (int) arr[i]+110 ) * Float.parseFloat(token[0]);
                 i++;
                 //Log.d("csv2",i+":"+token[0]+" * "+arr[i]+"= "+scale_arr[i]);
             }
