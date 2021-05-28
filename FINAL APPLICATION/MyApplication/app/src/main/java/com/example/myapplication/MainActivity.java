@@ -62,16 +62,12 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION
                     );
                 } else {
-
                     finalReceiverWifi.run();
-                    Toast.makeText(getApplicationContext(),"scanning",Toast.LENGTH_LONG).show();
                 }
-                //input을 예쁘게 요리하기 ~~
                 output = finalReceiverWifi.tflite_Result;
                 int region = GetRegion(output);
                 ShowLocation(region);
-
-
+                //Toast.makeText(getApplicationContext(),"끝",Toast.LENGTH_LON).show();
             }
         });
     }
@@ -107,14 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
     int GetRegion(int Region){
         int output;
-        /*
-        double percent=1.000;
-        for (int i = 0 ; i < 18 ; i ++){
-            if (output[0][i]<percent) {
-                percent = output[0][i];
-                Region = i;
-            }
-        }
         /*
         0->region1
 
