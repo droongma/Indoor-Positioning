@@ -1,11 +1,9 @@
 # Indoor-Positioning
 
-## Requirement
-Collector is created based on Windows 10.
-Server is developed based on Linux(Ubuntu-18.04).
-
-Install Anaconda for Windows. Then implment Anaconda Prompt with **Administration mode** and move to project folder(Indoor-positioning).
-
+## Introduction
+This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.
+The project consists of three stages: Collecting WIFI fingerprint data => Create deep learning model to predict location => Create Android app to provide indoor positioning service
+We use BSSID(MAC address of WIFI AP) and RSSI(strength of received signal)
 
 ## Collector
 Now follow the steps below within Anaconda Prompt.
