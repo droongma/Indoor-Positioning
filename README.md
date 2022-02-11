@@ -10,7 +10,7 @@ The project consists of three stages:**
 **2. Create deep learning model to predict location using data from stage 1**  
 **3. Create Android app to provide indoor positioning service**
 
-**BSSID** means MAC address of WIFI AP. It also means unique identifier of each AP.  
+**BSSID** means MAC address of WIFI AP. **BSSID also means unique identifier of each AP.**    
 **RSSI** means strength of received signal from each AP
 
 **You can see the introduction video in the following URL:**
