@@ -1,74 +1,57 @@
 # Indoor-Positioning
 
-## Requirement
-Collector is created based on Windows 10.
-Server is developed based on Linux(Ubuntu-18.04).
+## Introduction
+This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.  
 
-Install Anaconda for Windows. Then implment Anaconda Prompt with **Administration mode** and move to project folder(Indoor-positioning).
+**The goal of this project is to predict user's current indoor location using WIFI fingerprint information and deep learning model.  
+The project consists of three stages:**
 
+**1. To make dataset, collect WIFI fingerprint(BSSID and RSSI) data using collector**  
+**2. Create deep learning model to predict location using data from stage 1**  
+**3. Create Android app to provide indoor positioning service**
 
-## Collector
-Now follow the steps below within Anaconda Prompt.
+**BSSID** means MAC address of WIFI AP. **BSSID also means unique identifier of each AP.**    
+**RSSI** means strength of received signal from each AP
 
-First, create virtual environment.
-```shell
-> conda env create -f environment.yaml
-```
+**You can see the introduction video in the following URL:**
+https://vimeo.com/676350483
 
+## 1. Collector & Dataset
+To implement collector, we used the following techniques:
++ Used WifiManager class in Android Studio
++ Collected BSSID, RSSI data
++ Collected data is stored as Excel files (.xls)
 
-Now the virtual environment named **capstone** is created and you should activate it.
-```shell
-> conda activate capstone
-```
+As a result, we have 1598 APs in our result dataset.  
+The result dataset consists of 1599 columns(1598 for APs and 1 for location) and 287 rows.  
+**Each row represents signal information collected from specific location.**  
+**The last column represents location(that we want to predict) , and all other columns represents received signal strength of each AP.**
 
+The result dataset is here : [dataset](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/training_dataset_remove_duplicates.csv)
 
-Then, run the main.py.
-```shell
-> python main.py
-```
-
-## Server
-First, change your working directory to backend and create a virtual environment.
-```shell
-> cd backend
-> python3 -m venv venv
-```
-- The name of virtual environment should be venv.
-
-Then, activate the virtual environment.
-```shell
-> source venv/bin/activate
-```
-- This virtual environment **must be activated** whenever you try to run server.
-- If it is successfully activated, (venv) would be displayed at the leftmost of your shell.
-
-Next, install packages required for the server.
-``` shell
-> pip install -r deploy/requirements.txt
-```
-
-Lastly, you should create secret.key file. Django project requires secret.key but it is not included in this repo because of the security issue.
-```python
-import string, random
+**You can see the demonstration video of collector in the following URL:**
+https://vimeo.com/676350573
 
 
-# Get ascii Characters numbers and punctuation (minus quote characters as they could terminate string).
-chars = ''.join([string.ascii_letters, string.digits, string.punctuation]).replace('\'', '').replace('"', '').replace('\\', '')
+## 2. Deep Learning Model
+**It is a multi-class classification model.**  
+**Our deep learning model(TFLite model) to predict location based on the result dataset is here: [click to see model file](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/model_tflite_version.tflite)**  
 
-SECRET_KEY = ''.join([random.SystemRandom().choice(chars) for i in range(50)])
+The structure of our model is as follows:  
 
-print(SECRET_KEY)
-```
-- Using Python, create random string and store it into data/config/secret.key. (You should create secret.key file)
+![image14](https://user-images.githubusercontent.com/11453455/153637907-2f132131-ab3b-4b8f-83f2-9b5ded47fbf1.png)
+ Since the number of data is too small, we didn't make extra test set.  
+Instead, we used cross-validation(CV) set to measure accuracy.
+Our accuracy result is as follows:  
 
-Now setting for Django is done. Before you run the server, start mysql first.
-```shell
-service mysql start
-```
-
-Now you can run server with following command.
-```shell
-python3 manage.py runserver
-```
+![image13](https://user-images.githubusercontent.com/11453455/153638216-6c8b2df0-556d-4768-9b45-e6481782fce1.png)
 
 
+## 3. Final Application
+The execution process of our final application is as follows:  
+
+<img width="459" alt="image17" src="https://user-images.githubusercontent.com/11453455/153641620-cc808c77-b5fb-4b69-ae88-acd8b77469b2.png">
+
+
+**You can see the demonstration video of final application in the following URL:**
+https://vimeo.com/676350630
