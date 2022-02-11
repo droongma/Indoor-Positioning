@@ -25,7 +25,7 @@ To implement collector, we used the following techniques:
 As a result, we have 1598 APs in our result dataset.  
 The result dataset consists of 1599 columns(1598 for APs and 1 for location) and 287 rows.  
 **Each row represents signal information collected from specific location.**  
-**The last column represents location(that we want to predict) , and all other columns represents signal strength of each AP.**
+**The last column represents location(that we want to predict) , and all other columns represents received signal strength of each AP.**
 
 The result dataset is here : [dataset](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/training_dataset_remove_duplicates.csv)
 
@@ -34,20 +34,21 @@ https://vimeo.com/676350573
 
 
 ## 2. Deep Learning Model
-**You can see our deep learning model(TFLite model) to predict location based on the result dataset here: [Model file](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/model_tflite_version.tflite)**  
+**It is a multi-class classification model.**  
+**Our deep learning model(TFLite model) to predict location based on the result dataset is here: [click to see model file](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/model_tflite_version.tflite)**  
+
 The structure of our model is as follows:  
 
 ![image14](https://user-images.githubusercontent.com/11453455/153637907-2f132131-ab3b-4b8f-83f2-9b5ded47fbf1.png)
-
-It is basically a multi-class classification model. Since the number of data is too small, we don't make extra test set.  
-Instead, we use cross-validation(CV) set to measure accuracy.
+ Since the number of data is too small, we don't make extra test set.  
+Instead, we used cross-validation(CV) set to measure accuracy.
 Our accuracy result is as follows:  
 
 ![image13](https://user-images.githubusercontent.com/11453455/153638216-6c8b2df0-556d-4768-9b45-e6481782fce1.png)
 
 
 ## 3. Final Application
-The process of our final application is as follows:  
+The execution process of our final application is as follows:  
 
 <img width="459" alt="image17" src="https://user-images.githubusercontent.com/11453455/153641620-cc808c77-b5fb-4b69-ae88-acd8b77469b2.png">
 
