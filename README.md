@@ -3,10 +3,10 @@
 ## Introduction
 This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.  
 
-**The goal of this project is predict user's current location using WIFI fingerprint information.  
+**The goal of this project is to predict user's current location using WIFI fingerprint information.  
 The project consists of three stages:**
 
-**1. Collecting WIFI fingerprint(BSSID and RSSI) data using collector**  
+**1. To make dataset, Collect WIFI fingerprint(BSSID and RSSI) data using collector**  
 **2. Create deep learning model to predict location using data from stage 1**  
 **3. Create Android app to provide indoor positioning service**
 
@@ -16,13 +16,14 @@ The project consists of three stages:**
 **You can see the introduction video in the following URL:**
 https://vimeo.com/676350483
 
-## 1. Collector
+## 1. Collector & Dataset
 To implement collector, we used the following techniques:
 + Used WifiManager class in Android Studio
 + Collected BSSID, RSSI data
 + Collected data is stored as Excel files (.xls)
 
-As a result, we have 1598 APs. The result dataset consists of 1599 columns(1598 for APs and 1 for location) and 287 rows.  
+As a result, we have 1598 APs in our result dataset.  
+The result dataset consists of 1599 columns(1598 for APs and 1 for location) and 287 rows.  
 **Each row represents signal information collected from specific location.**  
 **The last column represents location(that we want to predict) , and all other columns represents signal strength of each AP.**
 
