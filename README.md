@@ -40,7 +40,7 @@ https://vimeo.com/676350573
 The structure of our model is as follows:  
 
 ![image14](https://user-images.githubusercontent.com/11453455/153637907-2f132131-ab3b-4b8f-83f2-9b5ded47fbf1.png)
- Since the number of data is too small, we don't make extra test set.  
+ Since the number of data is too small, we didn't make extra test set.  
 Instead, we used cross-validation(CV) set to measure accuracy.
 Our accuracy result is as follows:  
 
