@@ -13,7 +13,7 @@ The project consists of three stages:**
 **BSSID** means MAC address of WIFI AP. It also means unique identifier of each AP.  
 **RSSI** means strength of received signal from each AP
 
-You can see the introduction video in the following URL:
+**You can see the introduction video in the following URL:**
 https://vimeo.com/676350483
 
 ## 1. Collector
@@ -28,7 +28,7 @@ As a result, we have 1598 APs. The result dataset consists of 1599 columns(1598 
 
 The result dataset is here : [dataset](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/training_dataset_remove_duplicates.csv)
 
-You can see demonstration video of collector in the following URL:
+**You can see the demonstration video of collector in the following URL:**
 https://vimeo.com/676350573
 
 
@@ -51,5 +51,5 @@ The process of our final application is as follows:
 <img width="459" alt="image17" src="https://user-images.githubusercontent.com/11453455/153641620-cc808c77-b5fb-4b69-ae88-acd8b77469b2.png">
 
 
-You can see demonstration video of final application in the following URL:
+**You can see the demonstration video of final application in the following URL:**
 https://vimeo.com/676350630
