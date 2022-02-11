@@ -1,72 +1,41 @@
 # Indoor-Positioning
 
 ## Introduction
-This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.
-The project consists of three stages: Collecting WIFI fingerprint data => Create deep learning model to predict location => Create Android app to provide indoor positioning service
-We use BSSID(MAC address of WIFI AP) and RSSI(strength of received signal)
+**This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.**
 
-## Collector
-Now follow the steps below within Anaconda Prompt.
+The project consists of three stages:
 
-First, create virtual environment.
-```shell
-> conda env create -f environment.yaml
-```
+**1. Collecting WIFI fingerprint(BSSID and RSSI) data using collector**  
+**2. Create deep learning model to predict location using data from stage 1**  
+**3. Create Android app to provide indoor positioning service**
 
+## 1. Collector
+To implement collector, we used the following techniques:
++ Used WifiManager class in Android Studio
++ Collected BSSID, RSSI data
++ Collected data is stored as Excel files (.xls)
 
-Now the virtual environment named **capstone** is created and you should activate it.
-```shell
-> conda activate capstone
-```
-
-
-Then, run the main.py.
-```shell
-> python main.py
-```
-
-## Server
-First, change your working directory to backend and create a virtual environment.
-```shell
-> cd backend
-> python3 -m venv venv
-```
-- The name of virtual environment should be venv.
-
-Then, activate the virtual environment.
-```shell
-> source venv/bin/activate
-```
-- This virtual environment **must be activated** whenever you try to run server.
-- If it is successfully activated, (venv) would be displayed at the leftmost of your shell.
-
-Next, install packages required for the server.
-``` shell
-> pip install -r deploy/requirements.txt
-```
-
-Lastly, you should create secret.key file. Django project requires secret.key but it is not included in this repo because of the security issue.
-```python
-import string, random
+You can see demonstration video of collector in the following URL:
+https://vimeo.com/676350573
 
 
-# Get ascii Characters numbers and punctuation (minus quote characters as they could terminate string).
-chars = ''.join([string.ascii_letters, string.digits, string.punctuation]).replace('\'', '').replace('"', '').replace('\\', '')
+## 2. Deep Learning Model
+You can see our deep learning model to predict location based on BSSID and RSSI values here: [Model file](https://github.com/droongma/Indoor-Positioning/blob/main/ML(capstone)/ML%20model/model(joohyung)/TF_model/model_tflite_version.tflite)  
+The structure of our model is as follows:  
 
-SECRET_KEY = ''.join([random.SystemRandom().choice(chars) for i in range(50)])
+![image14](https://user-images.githubusercontent.com/11453455/153637907-2f132131-ab3b-4b8f-83f2-9b5ded47fbf1.png)
 
-print(SECRET_KEY)
-```
-- Using Python, create random string and store it into data/config/secret.key. (You should create secret.key file)
+It is basically a multi-class classification model. Since the number of data is too small, we don't make extra test set.  
+Instead, we use cross-validation(CV) set to measure accuracy.
+Our accuracy result is as follows:  
 
-Now setting for Django is done. Before you run the server, start mysql first.
-```shell
-service mysql start
-```
+![image13](https://user-images.githubusercontent.com/11453455/153638216-6c8b2df0-556d-4768-9b45-e6481782fce1.png)
 
-Now you can run server with following command.
-```shell
-python3 manage.py runserver
-```
+
+
+
+You can see demonstration video of collector in the following URL:
+https://vimeo.com/676350573
+
 
 
