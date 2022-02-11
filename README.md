@@ -3,10 +3,10 @@
 ## Introduction
 This repository is the result of 'Indoor Positioning Using WIFI Fingerprint' project.  
 
-**The goal of this project is to predict user's current location using WIFI fingerprint information.  
+**The goal of this project is to predict user's current indoor location using WIFI fingerprint information and deep learning model.  
 The project consists of three stages:**
 
-**1. To make dataset, Collect WIFI fingerprint(BSSID and RSSI) data using collector**  
+**1. To make dataset, collect WIFI fingerprint(BSSID and RSSI) data using collector**  
 **2. Create deep learning model to predict location using data from stage 1**  
 **3. Create Android app to provide indoor positioning service**
 
